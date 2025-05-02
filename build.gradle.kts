@@ -26,9 +26,12 @@ repositories {
 extra["springAiVersion"] = "1.0.0-M7"
 
 dependencies {
+	// swagger
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.ai:spring-ai-starter-model-openai")
+	// openai
+	// implementation("org.springframework.ai:spring-ai-starter-model-openai")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
