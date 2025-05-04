@@ -17,12 +17,13 @@ public class InsultBoardApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			Insult insult = new Insult();
+            Insult insult = new Insult("F U");
 			System.out.println(insult);
-            insult = new Insult("F U");
-			System.out.println(insult);
-//			insult = new Insult("");  // causes exception
-//			System.out.println(insult);
+
+			insult.like();
+			insult.like();
+
+			System.out.println(insult.getLikes());
 		};
 	}
 }

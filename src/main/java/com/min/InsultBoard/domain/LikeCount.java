@@ -8,17 +8,21 @@ import lombok.ToString;
 @Embeddable
 @EqualsAndHashCode
 @ToString
-//@ToString
-public class InsultContent {
+public class LikeCount {
     @Column(nullable = false)
-    private String value;
+    private int value;
 
-    protected InsultContent() {}
+    protected LikeCount() {}
 
-    public InsultContent(String value) {
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("Empty Insult Content");
-        }
+    private LikeCount(int value){
         this.value = value;
+    }
+
+    public static LikeCount init() {
+        return new LikeCount(0);
+    }
+
+    public LikeCount increment() {
+        return new LikeCount(this.value + 1);
     }
 }
