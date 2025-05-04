@@ -1,9 +1,8 @@
 package com.min.InsultBoard.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.min.InsultBoard.domain.InsultContent;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
@@ -13,11 +12,17 @@ import java.time.LocalDateTime;
 public class Insult {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @ToString.Include
     private Long id;
 
-    @ToString.Include
+    @Embedded
+    @AttributeOverride(name = "value", column = @Column(name="content"))
+    private InsultContent content;
+
     private LocalDateTime createdAt = LocalDateTime.now();
 
     public Insult() {}
+
+    public Insult(String content) {
+        this.content = new InsultContent(content);
+    }
 }

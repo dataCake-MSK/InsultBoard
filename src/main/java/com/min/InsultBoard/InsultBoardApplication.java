@@ -17,9 +17,12 @@ public class InsultBoardApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			// Create a new Insult object and print it
 			Insult insult = new Insult();
 			System.out.println(insult);
+            insult = new Insult("F U");
+			System.out.println(insult);
+//			insult = new Insult("");  // causes exception
+//			System.out.println(insult);
 		};
 	}
 }
