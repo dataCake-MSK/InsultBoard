@@ -1,5 +1,6 @@
 package com.min.InsultBoard.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.EqualsAndHashCode;
@@ -11,6 +12,7 @@ import lombok.ToString;
 //@ToString
 public class InsultContent {
     @Column(nullable = false)
+    @JsonProperty("value")
     private String value;
 
     protected InsultContent() {}

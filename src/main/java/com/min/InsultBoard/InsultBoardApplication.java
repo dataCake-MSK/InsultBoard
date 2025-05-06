@@ -1,7 +1,6 @@
 package com.min.InsultBoard;
 
 import com.min.InsultBoard.entity.Insult;
-import jakarta.annotation.PostConstruct;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,6 +20,7 @@ public class InsultBoardApplication {
 			System.out.println(insult);
 
 			insult.like();
+
 			insult.like();
 
 			System.out.println(insult.getLikes());
